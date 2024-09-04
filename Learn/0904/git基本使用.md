@@ -325,4 +325,33 @@ git stash show
 
 ```
 
+## 拉取指定分支
 
+```
+git clone -b 分支name
+
+
+#拉取所有分支
+git fetch
+```
+
+## 提交分支
+
+```
+git add 
+
+git commit
+
+git push
+```
+
+## 子模块管理
+
+```
+#添加一个子模块
+git submoudle add https://xxx.xxx/abc.git
+
+
+#更新子模块
+git submoudle update
+```
