@@ -236,17 +236,6 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 ```
 
-<<<<<<< HEAD
-## 创建分支
-
-```
-#创建分支后会自动切换
-git chechkout -b dev
-
-#查看当前是哪个分支
-git branch
-```
-=======
 ## 创建,切换分支
 
 ```
@@ -268,5 +257,4 @@ git checkout dev
 
 ## 合并分支
 
-
->>>>>>> dev
+master上的操作
