@@ -235,3 +235,13 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 
 ```
+
+## 创建分支
+
+```
+#创建分支后会自动切换
+git chechkout -b dev
+
+#查看当前是哪个分支
+git branch
+```
