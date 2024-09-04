@@ -113,10 +113,9 @@ $ ls -ah
 ## 查看修改状态
 
 ```
-A:未修改
-AM:修改
-Untracked:未提交
-modfile:新文件未提交
+deleted:删除未提交
+modified:修改未提交
+Untracked:新文件未提交
 ```
 
 ## 工作区，缓存区
@@ -138,5 +137,3 @@ git add .
 #区别于回滚操作，这个操作可以将单个文件恢复到上一次提交的状态
 git checkout --file
 ```
-
-
