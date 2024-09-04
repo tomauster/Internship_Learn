@@ -137,3 +137,101 @@ git add .
 #区别于回滚操作，这个操作可以将单个文件恢复到上一次提交的状态
 git checkout --file
 ```
+
+## 查看单个文件历史版本
+
+```
+git log filename
+```
+
+
+
+## 删除文件
+
+```
+##普通删除文件
+rm filename
+//这个操作后查看状态会提示未提交到缓存，需要进行add commit操作
+#git 删除文件
+git rm filename
+//这个操作后查看状态没有提示，他会自动帮我们add 我们只需要进行commit 操作
+
+#git rm 后恢复文件
+在未commit前，使用git rm 删除文件后可以使用 git reset，git checkout恢复
+```
+
+## 查看提交历史
+
+```
+#查看当前版本库的提交历史
+git reflog
+```
+
+
+
+## Git基本组成框架
+
+```
+workspace：开发者工作区间
+index：缓存区
+Repository：本地仓库
+Remote：远程仓库
+```
+
+
+
+## Git rm 后恢复文件
+
+```
+#进行git rm删除文件后，未commit前可恢复文件
+
+-->
+31926@LAPTOP-6RVPE2IE MINGW64 /e/Neusiri/b/Learn/0904 (master)
+$ git rm test.c
+rm 'Learn/0904/test.c'
+
+31926@LAPTOP-6RVPE2IE MINGW64 /e/Neusiri/b/Learn/0904 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    test.c
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   "git\345\237\272\346\234\254\344\275\277\347\224\250.md"
+
+
+31926@LAPTOP-6RVPE2IE MINGW64 /e/Neusiri/b/Learn/0904 (master)
+$ git reset
+Unstaged changes after reset:
+M       Learn/0904/git基本使用.md
+D       Learn/0904/test.c
+
+31926@LAPTOP-6RVPE2IE MINGW64 /e/Neusiri/b/Learn/0904 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   "git\345\237\272\346\234\254\344\275\277\347\224\250.md"
+        deleted:    test.c
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+31926@LAPTOP-6RVPE2IE MINGW64 /e/Neusiri/b/Learn/0904 (master)
+$ git checkout test.c
+Updated 1 path from the index
+
+31926@LAPTOP-6RVPE2IE MINGW64 /e/Neusiri/b/Learn/0904 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   "git\345\237\272\346\234\254\344\275\277\347\224\250.md"
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+```
