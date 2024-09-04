@@ -307,6 +307,22 @@ git stash
 #查看存储了多少工作状态
 git stash list
 
-#恢复状态
-git stash pop
+#恢复状态，并删除状态列表
+git stash pop 
+
+#恢复第一个状态且不会删除
+git stash apply 
+
+#移除指定list
+git stash drop listname
+
+#移除所有list
+git stash clear
+
+#查看当前最新保存的stash和当前目录的差异
+git stash show
+
+
 ```
+
+
