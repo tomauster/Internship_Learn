@@ -261,3 +261,52 @@ master上的操作
 在dev上的修改
 
 
+
+
+
+```
+#切换到分支dev
+git checkout dev
+
+#修改文件内容后提交到缓存并commit
+git add .
+git commit 
+
+#切换回到 master
+git checkout master
+
+#合并分支
+git merge dev
+
+```
+
+
+
+## 删除分支
+
+```
+#删除本地分支
+git branch -D
+
+#删除远程分支
+git push origin --delete
+
+
+#修改分支名
+git branch -m 分支名 新分支名
+```
+
+
+
+## 保存当前工作区间
+
+```
+#保存当前工作状态
+git stash
+
+#查看存储了多少工作状态
+git stash list
+
+#恢复状态
+git stash pop
+```
